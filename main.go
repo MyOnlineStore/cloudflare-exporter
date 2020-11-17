@@ -4,9 +4,12 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"os"
 
+	"cloudflare-exporter/collectors"
+
+	"github.com/cloudflare/cloudflare-go"
 	"github.com/prometheus/client_golang/prometheus"
-
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
@@ -16,11 +19,27 @@ var (
 	healthPath  = flag.String("web.health-path", "/health", "Path under which to expose exporter health.")
 )
 
+var (
+	zoneCollector collectors.ZoneCollector
+)
+
+func initCollectors() {
+	cfClient, err := cloudflare.NewWithAPIToken(os.Getenv("CF_API_TOKEN"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	zoneCollector = *collectors.NewZoneCollector(cfClient)
+}
+
 func main() {
 	flag.Parse()
 
+	initCollectors()
+
 	// Register Prometheus Collectors
 	prometheus.MustRegister(prometheus.NewBuildInfoCollector())
+	prometheus.MustRegister(&zoneCollector)
 
 	// Expose the registered metrics via HTTP.
 	http.Handle(*metricsPath, promhttp.Handler())

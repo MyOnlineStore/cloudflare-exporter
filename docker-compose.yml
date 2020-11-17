@@ -1,0 +1,11 @@
+version: '3'
+services:
+  cloudflare-exporter:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "9178:9178"
+    volumes:
+      - ".:/src:ro"
+    env_file: .env
