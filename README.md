@@ -1,6 +1,5 @@
 # Cloudflare exporter
 Export [Cloudflare](https://www.cloudflare.com/) zone statistics to [Prometheus](https://prometheus.io/).
-Prometheus exporter for scraping Cloudflare zones
 
 ## Usage
 Run the binary:
