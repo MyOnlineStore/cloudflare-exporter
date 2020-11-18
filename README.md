@@ -10,6 +10,8 @@ Run the binary:
 ## Exported Metrics
 | Metric | Description | Labels |
 | ------ | ------- | ------ |
+| cloudflare_zones_up | Was the Cloudflare Zones scrape successful. | |
+| cloudflare_zones_currrent | Cloudflare zones per plan. | `plan` |
 
 ## Flags
 ```shell
