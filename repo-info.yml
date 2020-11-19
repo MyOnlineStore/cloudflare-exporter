@@ -8,6 +8,7 @@ deploy:
   stage:
     enabled: true
     namespace: infra
+    trigger: main
   prod:
     enabled: true
     namespace: infra
