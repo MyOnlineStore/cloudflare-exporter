@@ -5,6 +5,7 @@ project:
   name: cloudflare-exporter
 
 deploy:
+  port: 9178
   stage:
     enabled: true
     namespace: infra
