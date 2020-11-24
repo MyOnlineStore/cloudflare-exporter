@@ -111,6 +111,7 @@ jobs:
           $VALUE_FILES \
           --set fullnameOverride=$PROJECT_NAME \
           --set nameOverride=$PROJECT_NAME \
+          --set image.repository=eu.gcr.io/$GKE_PROJECT \
           --set image.name=$PROJECT_NAME \
           --set image.tag=$GITHUB_SHA \
           --set image.hash=$IMAGE_HASH \
