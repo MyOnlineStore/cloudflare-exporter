@@ -15,7 +15,7 @@ COPY . .
 RUN GOOS=linux GOARCH=amd64 go build -o /out/cloudflare-exporter . && ls /out
 
 FROM scratch AS bin
-EXPOSE 4000
+EXPOSE 9178
 USER 1001
 ENTRYPOINT [ "/cloudflare-exporter" ]
 COPY --from=build /out/cloudflare-exporter /cloudflare-exporter
