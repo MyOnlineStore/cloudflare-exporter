@@ -6,6 +6,9 @@ FROM golang:1.15-alpine AS build
 WORKDIR /src
 ENV CGO_ENABLED=0
 
+# Install tooling
+RUN apk update && apk add --no-cache ca-certificates && update-ca-certificates
+
 # Download dependencies
 COPY go.mod go.sum ./
 RUN go mod download
@@ -18,4 +21,5 @@ FROM scratch AS bin
 EXPOSE 4000
 USER 1001
 ENTRYPOINT [ "/cloudflare-exporter" ]
+COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /out/cloudflare-exporter /cloudflare-exporter
