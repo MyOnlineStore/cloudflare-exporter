@@ -29,7 +29,5 @@ readinessProbe:
 
 prometheus:
   enabled: true
-
-serviceMonitor:
   interval: 1h
   scrapeTimeout: 1h
