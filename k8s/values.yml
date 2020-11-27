@@ -31,5 +31,5 @@ prometheus:
   enabled: true
 
 serviceMonitor:
-  interval: 5m
-  scrapeTimeout: 5m
+  interval: 1h
+  scrapeTimeout: 1h
