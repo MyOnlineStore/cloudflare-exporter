@@ -1,4 +1,5 @@
 replicas: 1
+minReplicas: 0
 
 env:
 - name: CF_API_TOKEN
