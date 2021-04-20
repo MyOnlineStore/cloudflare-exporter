@@ -70,7 +70,7 @@ jobs:
       with:
         command: kubernetes.rolling-deployment
         helmChart: deployment
-        helmVersion: '0'
+        helmChartVersion: '0'
         imageHash: ${{ needs.build.outputs.imageHash }}
         imageTag: ${{ needs.build.outputs.imageTag }}
 
