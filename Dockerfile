@@ -23,3 +23,6 @@ USER 1001
 ENTRYPOINT [ "/cloudflare-exporter" ]
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /out/cloudflare-exporter /cloudflare-exporter
+
+ARG COMMIT_HASH
+ENV COMMIT_HASH=${COMMIT_HASH}
