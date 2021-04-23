@@ -1,4 +1,4 @@
-name: "Deploy to staging"
+name: "Deploy cloudflare-exporter to staging"
 
 on: push
 
