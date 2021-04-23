@@ -1,9 +1,6 @@
 name: "Deploy to staging"
 
-on:
-  push:
-    branches:
-    - main
+on: push
 
 env:
   PROJECT_NAME: cloudflare-exporter
@@ -11,7 +8,7 @@ env:
   NAMESPACE: infra
   HELM_CHART: "deployment"
   HELM_CHART_MAJOR_VERSION: "0"
-  PABLO_VERSION: "v2"
+  PABLO_VERSION: "SHIP-136-build"
   GITHUB_SHA: ${{ github.sha }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   MOS_EU_GITHUB_TOKEN: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
