@@ -15,6 +15,7 @@ env:
   MOS_EU_GITHUB_USERNAME: ${{ secrets.MOS_EU_GITHUB_USERNAME }}
   TEAM: test
 
+  SLACK_TOKEN: ${{ secrets.PABLO_SLACK_TOKEN }}
   GKE_KEY: ${{ secrets.GKE_DEVELOP_KEY }}
 
 jobs:
