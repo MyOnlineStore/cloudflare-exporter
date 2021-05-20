@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_NAME: cloudflare-exporter
-  TEAM: dev
+  TEAM: csi
   APP_ENV: prod
   NAMESPACE: infra
   HELM_CHART: "deployment"
@@ -90,7 +90,9 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: MyOnlineStore/pablo
-        ref: ${{ env.PABLO_VERSION }}        token: ${{ secrets.MOS_EU_GITHUB_TOKEN }}        path: .github/actions/pablo
+        ref: ${{ env.PABLO_VERSION }}
+        token: ${{ secrets.MOS_EU_GITHUB_TOKEN }}
+        path: .github/actions/pablo
 
     - name: Notify slack
       uses: ./.github/actions/pablo

@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_NAME: cloudflare-exporter
-  TEAM: dev
+  TEAM: csi
   APP_ENV: stage
   NAMESPACE: infra
   HELM_CHART: "deployment"
