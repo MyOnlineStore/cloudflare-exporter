@@ -41,7 +41,7 @@ jobs:
 
     # Setup gcloud CLI
     - name: Setup gcloud CLI
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@v1
 
     # Build and push the Docker image
     - name: Build and Push Image
