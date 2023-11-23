@@ -11,7 +11,7 @@ env:
   APP_ENV: prod
   NAMESPACE: infra
   HELM_CHART: "deployment"
-  HELM_CHART_MAJOR_VERSION: "0"
+  HELM_CHART_MAJOR_VERSION: "1"
   PABLO_VERSION: "v2"
   GITHUB_SHA: ${{ github.sha }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
